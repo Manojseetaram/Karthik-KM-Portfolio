@@ -10,7 +10,7 @@ const heroData = {
     location: 'India',
     established: '2024',
     photo: '/public/ka.png',         
-    stat: { number: '15+', label: 'Projects Shipped' },
+    
     badges: ['Full-Stack Dev', 'ML Engineer', 'Open Source'],
     cta: {
         primary:   { label: 'View Projects', href: '#projects' },
@@ -68,22 +68,7 @@ const Hero = () => {
                         transition={{ duration: 0.8 }}
                         className="relative z-20"
                     >
-                        {/* Status badges */}
-                        <div className="flex flex-wrap items-center gap-4 mb-10">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
-                                <span className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
-                                <span className="text-[10px] font-black text-white/60 tracking-[0.2em] uppercase">
-                                    Open to Work • {heroData.location}
-                                </span>
-                            </div>
-
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue/10 border border-brand-blue/20 backdrop-blur-md text-brand-blue">
-                                <Clock size={12} className="animate-pulse" />
-                                <span className="text-[10px] font-black tracking-[0.2em] uppercase font-mono">
-                                    {formatTime(time)} IST
-                                </span>
-                            </div>
-                        </div>
+                    
 
                         {/* Name */}
                         <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-black leading-[0.85] mb-6 uppercase tracking-tighter drop-shadow-2xl relative">
@@ -153,32 +138,9 @@ const Hero = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-60" />
                         </div>
 
-                        {/* Floating stat card */}
-                        <motion.div
-                            animate={{ y: [0, -15, 0], rotate: [2, -2, 2] }}
-                            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                            className="absolute -bottom-10 -right-10 premium-blur p-8 rounded-[2rem] shadow-4xl border border-brand-blue/20 bg-brand-blue/5 z-20 backdrop-blur-2xl"
-                        >
-                            <div className="text-5xl font-black font-outfit text-white tracking-tighter mb-1">
-                                {heroData.stat.number}
-                            </div>
-                            <div className="text-[10px] text-brand-blue font-black uppercase tracking-[0.3em] font-inter">
-                                {heroData.stat.label}
-                            </div>
-                        </motion.div>
+                      
 
-                        {/* Floating tech badge */}
-                        <motion.div
-                            animate={{ y: [0, 10, 0], rotate: [-1, 1, -1] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                            className="absolute -top-6 -left-6 premium-blur px-6 py-4 rounded-2xl border border-white/10 bg-midnight/60 z-20 backdrop-blur-2xl flex items-center gap-3"
-                        >
-                            <span className="text-xl">🤖</span>
-                            <div>
-                                <div className="text-[10px] text-brand-blue font-black uppercase tracking-[0.2em]">ML / AI</div>
-                                <div className="text-[9px] text-white/40 font-mono">Python · TensorFlow</div>
-                            </div>
-                        </motion.div>
+                        
                     </motion.div>
 
                 </div>

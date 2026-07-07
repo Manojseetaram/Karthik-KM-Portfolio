@@ -1,112 +1,133 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Brain, Layers, Wrench } from 'lucide-react';
+import { Code2 } from 'lucide-react';
+import {
+    SiPython, SiJavascript, SiTypescript, SiOpenjdk, SiCplusplus, SiMysql,
+    SiTensorflow, SiPytorch, SiScikitlearn, SiPandas, SiNumpy, SiOpencv, SiHuggingface,
+    SiReact, SiNodedotjs, SiExpress, SiMongodb, SiTailwindcss, SiNextdotjs, SiPostgresql,
+    SiGit, SiGithub, SiFigma, SiJupyter, SiDocker, SiPostman, SiFirebase, SiLinux
+} from 'react-icons/si';
+import { Terminal } from 'lucide-react';
 
-// ── Skill data ──────────────────────────────────────────────────────────────
+// ── Skill data grouped by category ──────────────────────────────────────────
 const categories = [
     {
         id: 'languages',
         label: 'Languages',
-        icon: <Code2 size={16} />,
         skills: [
-            { name: 'Python',      emoji: '🐍', level: 90 },
-            { name: 'JavaScript',  emoji: '⚡', level: 82 },
-            { name: 'TypeScript',  emoji: '🔷', level: 72 },
-            { name: 'Java',        emoji: '☕', level: 68 },
-            { name: 'C / C++',     emoji: '⚙️', level: 65 },
-            { name: 'SQL',         emoji: '🗄️', level: 78 },
+            { name: 'Python', icon: SiPython, color: '#3776AB' },
+            { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+            { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+            { name: 'Java', icon: SiOpenjdk, color: '#EA2D2E' },
+            { name: 'C / C++', icon: SiCplusplus, color: '#00599C' },
+            { name: 'SQL', icon: SiMysql, color: '#4479A1' },
         ],
     },
     {
         id: 'ml',
         label: 'Machine Learning',
-        icon: <Brain size={16} />,
         skills: [
-            { name: 'TensorFlow',      emoji: '🔥', level: 80 },
-            { name: 'PyTorch',         emoji: '🕯️', level: 72 },
-            { name: 'scikit-learn',    emoji: '📊', level: 85 },
-            { name: 'Pandas',          emoji: '🐼', level: 88 },
-            { name: 'NumPy',           emoji: '🔢', level: 86 },
-            { name: 'Matplotlib',      emoji: '📈', level: 80 },
-            { name: 'OpenCV',          emoji: '👁️', level: 65 },
-            { name: 'Hugging Face',    emoji: '🤗', level: 60 },
+            { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00' },
+            { name: 'PyTorch', icon: SiPytorch, color: '#EE4C2C' },
+            { name: 'scikit-learn', icon: SiScikitlearn, color: '#F7931E' },
+            { name: 'Pandas', icon: SiPandas, color: '#150458' },
+            { name: 'NumPy', icon: SiNumpy, color: '#013243' },
+            { name: 'OpenCV', icon: SiOpencv, color: '#5C3EE8' },
+            { name: 'Hugging Face', icon: SiHuggingface, color: '#FFD21E' },
         ],
     },
     {
         id: 'fullstack',
         label: 'Full-Stack',
-        icon: <Layers size={16} />,
         skills: [
-            { name: 'React',       emoji: '⚛️', level: 82 },
-            { name: 'Node.js',     emoji: '🟢', level: 76 },
-            { name: 'Express.js',  emoji: '🚂', level: 74 },
-            { name: 'MongoDB',     emoji: '🍃', level: 72 },
-            { name: 'REST API',    emoji: '🔗', level: 80 },
-            { name: 'Tailwind CSS',emoji: '🎨', level: 85 },
-            { name: 'Next.js',     emoji: '▲',  level: 65 },
-            { name: 'PostgreSQL',  emoji: '🐘', level: 66 },
+            { name: 'React', icon: SiReact, color: '#61DAFB' },
+            { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
+            { name: 'Express.js', icon: SiExpress, color: '#FFFFFF' },
+            { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+            { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
+            { name: 'Next.js', icon: SiNextdotjs, color: '#FFFFFF' },
+            { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
         ],
     },
     {
         id: 'tools',
         label: 'Tools',
-        icon: <Wrench size={16} />,
         skills: [
-            { name: 'Git / GitHub',    emoji: '🐙', level: 88 },
-            { name: 'Figma',           emoji: '🖌️', level: 74 },
-            { name: 'VS Code',         emoji: '💻', level: 95 },
-            { name: 'Jupyter',         emoji: '📓', level: 90 },
-            { name: 'Docker',          emoji: '🐳', level: 60 },
-            { name: 'Postman',         emoji: '📬', level: 80 },
-            { name: 'Firebase',        emoji: '🔥', level: 70 },
-            { name: 'Linux / Bash',    emoji: '🐧', level: 68 },
+            { name: 'Git', icon: SiGit, color: '#F05032' },
+            { name: 'GitHub', icon: SiGithub, color: '#FFFFFF' },
+            { name: 'Figma', icon: SiFigma, color: '#F24E1E' },
+            { name: 'VS Code', icon: Terminal, color: '#007ACC' },
+            { name: 'Jupyter', icon: SiJupyter, color: '#F37626' },
+            { name: 'Docker', icon: SiDocker, color: '#2496ED' },
+            { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
+            { name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
+            { name: 'Linux / Bash', icon: SiLinux, color: '#FCC624' },
         ],
     },
 ];
 // ────────────────────────────────────────────────────────────────────────────
 
-const SkillBar = ({ name, emoji, level, delay }) => (
+const SkillCard = ({ name, icon: Icon, color, delay }) => (
     <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay }}
-        className="group"
+        transition={{ delay, duration: 0.4 }}
+        whileHover={{ y: -6, scale: 1.03 }}
+        className="group relative flex flex-col items-center justify-center gap-4 aspect-square rounded-3xl border border-white/10 bg-white/[0.03] hover:border-brand-blue/40 hover:bg-brand-blue/[0.06] transition-all duration-300 p-6 overflow-hidden"
     >
-        <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center gap-2">
-                <span className="text-base">{emoji}</span>
-                <span className="text-sm font-bold text-white/70 uppercase tracking-widest group-hover:text-white transition-colors">
-                    {name}
-                </span>
-            </div>
-            <span className="text-[10px] font-black text-brand-blue tracking-widest">{level}%</span>
-        </div>
-        <div className="h-[3px] bg-white/5 rounded-full overflow-hidden">
-            <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${level}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: delay + 0.2, ease: 'easeOut' }}
-                className="h-full bg-gradient-to-r from-brand-blue to-blue-400 rounded-full"
-            />
-        </div>
+        <div
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"
+            style={{ background: `radial-gradient(circle at 50% 30%, ${color}22, transparent 70%)` }}
+        />
+        <Icon
+            size={44}
+            style={{ color }}
+            className="relative z-10 group-hover:scale-110 transition-transform duration-300"
+        />
+        <span className="relative z-10 text-white/70 group-hover:text-white text-sm font-bold uppercase tracking-widest font-inter text-center transition-colors">
+            {name}
+        </span>
     </motion.div>
 );
 
+const CategoryBlock = ({ label, skills, index }) => (
+    <div className="mb-20">
+        <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-4 mb-10"
+        >
+            <div className="w-1 h-8 bg-brand-blue rounded-full" />
+            <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter">
+                {label}
+            </h3>
+            <span className="text-white/30 text-sm font-bold font-inter">
+                ({skills.length})
+            </span>
+        </motion.div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {skills.map((skill, i) => (
+                <SkillCard key={skill.name} {...skill} delay={(index * 0.1) + i * 0.05} />
+            ))}
+        </div>
+    </div>
+);
+
 const Skills = () => {
-    const [active, setActive] = useState('languages');
-    const current = categories.find(c => c.id === active);
+    const totalSkills = categories.reduce((sum, c) => sum + c.skills.length, 0);
 
     return (
         <section id="skills" className="py-32 bg-midnight relative overflow-hidden">
             {/* Ambient glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-blue/5 blur-[150px] rounded-full -z-10" />
+            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-brand-blue/5 blur-[150px] rounded-full -z-10" />
 
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* ── Header ────────────────────────────────────────────── */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
                     <div className="max-w-2xl">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -132,60 +153,16 @@ const Skills = () => {
                         className="hidden md:block"
                     >
                         <div className="text-right">
-                            <div className="text-5xl font-black text-white tracking-tighter">20+</div>
+                            <div className="text-5xl font-black text-white tracking-tighter">{totalSkills}+</div>
                             <div className="text-brand-blue font-bold uppercase tracking-widest text-sm mt-1">Tools & Technologies</div>
                         </div>
                     </motion.div>
                 </div>
 
-                {/* ── Category tabs ─────────────────────────────────────── */}
-                <div className="flex flex-wrap gap-3 mb-14">
-                    {categories.map(cat => (
-                        <button
-                            key={cat.id}
-                            onClick={() => setActive(cat.id)}
-                            className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-black text-[10px] uppercase tracking-[0.25em] transition-all ${
-                                active === cat.id
-                                    ? 'bg-brand-blue text-white shadow-[0_0_24px_rgba(18,62,151,0.5)]'
-                                    : 'bg-white/5 text-white/40 border border-white/10 hover:text-white hover:bg-white/10'
-                            }`}
-                        >
-                            {cat.icon}
-                            {cat.label}
-                        </button>
-                    ))}
-                </div>
-
-                {/* ── Skill grid ────────────────────────────────────────── */}
-                <motion.div
-                    key={active}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 premium-blur p-12 rounded-[2.5rem] border border-white/5"
-                >
-                    {current.skills.map((skill, i) => (
-                        <SkillBar key={skill.name} {...skill} delay={i * 0.07} />
-                    ))}
-                </motion.div>
-
-                {/* ── Bottom chip cloud (all skills at a glance) ────────── */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                    className="mt-16 flex flex-wrap gap-3 justify-center"
-                >
-                    {categories.flatMap(c => c.skills).map(skill => (
-                        <span
-                            key={skill.name}
-                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/40 text-[10px] font-bold uppercase tracking-widest hover:text-white hover:border-brand-blue/40 hover:bg-brand-blue/5 transition-all cursor-default"
-                        >
-                            <span>{skill.emoji}</span> {skill.name}
-                        </span>
-                    ))}
-                </motion.div>
+                {/* ── Category blocks ──────────────────────────────────── */}
+                {categories.map((cat, index) => (
+                    <CategoryBlock key={cat.id} label={cat.label} skills={cat.skills} index={index} />
+                ))}
 
             </div>
         </section>
