@@ -14,7 +14,7 @@ const heroData = {
         secondary: { label: 'My Tech Stack', href: '#skills' },
     },
 };
-
+// Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat sed aperiam iusto quis quos impedit cumque quod veritatis vel vitae minus neque, repellendus, autem dolor. Voluptas saepe amet voluptatibus delectus.
 const Hero = () => {
     return (
         <section
