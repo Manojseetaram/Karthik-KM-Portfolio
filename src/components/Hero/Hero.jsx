@@ -9,7 +9,7 @@ const heroData = {
     tagline: 'Information Science Engineering student skilled in programming, analytics, and full-stack development. Seeking opportunities to apply technical skills, contribute to real-world solutions, and grow in software and data-driven roles.',
     location: 'India',
     established: '2024',
-    photo: '../../assets/ka.png',         
+    photo: '/public/ka.png',         
     stat: { number: '15+', label: 'Projects Shipped' },
     badges: ['Full-Stack Dev', 'ML Engineer', 'Open Source'],
     cta: {

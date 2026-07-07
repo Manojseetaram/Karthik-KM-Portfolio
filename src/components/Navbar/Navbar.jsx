@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import {  AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
         { name: 'About',      href: '#about' },
         { name: 'Skills',     href: '#skills' },
         { name: 'Projects',   href: '#projects' },
-        { name: 'Experience', href: '#experience' },
+       
     ];
 
     return (
@@ -87,7 +87,7 @@ const Navbar = () => {
                             ))}
                             <hr className="border-white/5" />
                             <a
-                                href="#contact"
+                              href="#hire-me"
                                 className="btn-premium w-full text-white text-[12px] tracking-[0.3em] text-center !no-underline"
                                 onClick={() => setIsOpen(false)}
                             >
