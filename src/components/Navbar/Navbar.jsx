@@ -47,7 +47,7 @@ const Navbar = () => {
                             </a>
                         ))}
                         <a
-                            href="#contact"
+                             href="#hire-me"
                             className="px-10 py-4 bg-brand-blue text-white rounded-full font-black text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-midnight transition-all shadow-[0_0_30px_rgba(18,62,151,0.4)] hover:shadow-none !no-underline"
                         >
                             HIRE ME

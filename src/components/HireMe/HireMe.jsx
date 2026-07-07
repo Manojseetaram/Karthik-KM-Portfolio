@@ -6,7 +6,7 @@ const HireMe = () => {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
     link.href = '/resume.pdf';
-    link.download = 'Souhardya_Bose_Resume.pdf';
+    link.download = 'karthik.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
