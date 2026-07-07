@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Code2, Clock, Cpu } from 'lucide-react';
-
+import ka from '../../assets/ka.png'
 
 const heroData = {
     firstName: 'KARTHIK',
@@ -9,7 +9,7 @@ const heroData = {
     tagline: 'Information Science Engineering student skilled in programming, analytics, and full-stack development. Seeking opportunities to apply technical skills, contribute to real-world solutions, and grow in software and data-driven roles.',
     location: 'India',
     established: '2024',
-    photo: '/src/assets/ka.png',         
+    photo: ka,         
     
     badges: ['Full-Stack Dev', 'ML Engineer', 'Open Source'],
     cta: {
