@@ -28,10 +28,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-12 border-t border-white/5 text-white/20">
             <div className="text-2xl font-black font-outfit uppercase tracking-tighter">
-              Souhardya <span className="text-brand-blue">Bose.</span>
+              Karthik <span className="text-brand-blue">Km.</span>
             </div>
             <p className="tracking-widest uppercase text-[10px] font-black font-inter">
-              © 2026 SOUHARDYA BOSE • HEAD OF GUEST RELATIONS • ALL RIGHTS RESERVED
+              © 2026 KARTHIK KM • HEAD OF GUEST RELATIONS • ALL RIGHTS RESERVED
             </p>
           </div>
         </div>
