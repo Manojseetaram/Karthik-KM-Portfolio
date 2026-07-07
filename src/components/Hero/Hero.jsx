@@ -62,10 +62,7 @@ const Hero = () => {
 
                         <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
                             {heroData.badges.map((badge) => (
-                                <span
-                                    key={badge}
-                                    className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-brand-blue/30 bg-brand-blue/5 text-brand-blue text-[10px] font-black uppercase tracking-[0.2em]"
-                                >
+                                <span key={badge} className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-brand-blue/30 bg-brand-blue/5 text-brand-blue text-[10px] font-black uppercase tracking-[0.2em]">
                                     <Code2 size={10} />
                                     {badge}
                                 </span>
@@ -77,17 +74,11 @@ const Hero = () => {
                         </p>
 
                         <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                            
-                                href={heroData.cta.primary.href}
-                                className="btn-premium flex items-center gap-3 group !no-underline text-white px-8 py-4"
-                            >
+                            <a href={heroData.cta.primary.href} className="btn-premium flex items-center gap-3 group !no-underline text-white px-8 py-4">
                                 {heroData.cta.primary.label}
                                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </a>
-                            
-                                href={heroData.cta.secondary.href}
-                                className="flex items-center gap-3 px-6 py-4 rounded-full bg-white/[0.03] border border-white/10 font-black text-[10px] tracking-[0.2em] uppercase hover:bg-white/10 transition-all group text-white !no-underline"
-                            >
+                            <a href={heroData.cta.secondary.href} className="flex items-center gap-3 px-6 py-4 rounded-full bg-white/[0.03] border border-white/10 font-black text-[10px] tracking-[0.2em] uppercase hover:bg-white/10 transition-all group text-white !no-underline">
                                 <div className="w-9 h-9 rounded-full bg-brand-blue/20 flex items-center justify-center group-hover:bg-brand-blue transition-colors">
                                     <Cpu size={16} className="text-white" />
                                 </div>

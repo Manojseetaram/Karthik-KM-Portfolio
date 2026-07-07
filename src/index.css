@@ -4,11 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base Styles */
 html {
   scroll-behavior: smooth;
+  background-color: #080808;
 }
-
 body {
   background-color: #0d0d1a;
   color: white;
