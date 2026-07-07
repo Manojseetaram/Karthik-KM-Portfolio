@@ -16,8 +16,8 @@ const HireMe = () => {
     {
       name: 'Email',
       icon: Mail,
-      href: 'mailto:souhardya.bose@example.com',
-      label: 'souhardya.bose@example.com',
+      href: 'karthikkm241005@gmail.com',
+      label: 'karthikkm241005@gmail.com',
     },
     {
       name: 'GitHub',
