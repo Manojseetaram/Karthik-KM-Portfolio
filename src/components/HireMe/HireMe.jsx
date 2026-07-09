@@ -28,8 +28,8 @@ const HireMe = () => {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      href: 'https://linkedin.com/in/souhardya-bose',
-      label: 'souhardya-bose',
+      href: 'https://linkedin.com/in/karthik-km',
+      label: 'Karthik KM',
     },
   ];
 
