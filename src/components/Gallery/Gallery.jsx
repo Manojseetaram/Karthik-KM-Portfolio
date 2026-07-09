@@ -5,7 +5,7 @@ import { Github, ExternalLink, Leaf, MessageSquareText, Globe, Droplets } from '
 const projects = [
   {
     id: 1,
-    title: 'EcoCorce',
+    title: 'E-Commerce web Application',
     category: 'Web Application',
     description: 'A sustainability-focused platform built to track and manage eco-friendly initiatives, promoting greener practices through an intuitive interface.',
     tech: ['React', 'Node.js', 'MongoDB'],
